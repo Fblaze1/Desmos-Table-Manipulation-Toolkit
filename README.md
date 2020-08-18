@@ -1,2 +1,41 @@
-# Desmos-Table-Manipulation-Toolkit
-A collection of functions for creating, manipulating and accessing values from tables in the desmos graphing calculator
+# Desmos Table Manipulation Toolkit (TMT)
+A collection of functions for creating, manipulating and accessing values from tables in the desmos online graphing calculator using the desmos API
+
+## "Installation"
+
+The code is intended to be run in the console of a desmos page so the only step to set it up is to paste the code into the console (which can be opened with Ctrl + Shift + i) and run it.
+
+## Concepts
+
+Desmos stores expressions as objects in an array. Each object has an `id` property which must be unique. The `id` of an expression cannot be observed through the desmos user interface but its expression number is displayed next to the expression. TMT functions address expressions, including tables, using their `id`. The TMT function `expressionNumberToId` allows users to input the expression number visible in desmos and obtain the expression's `id` so it can then be manipulated using TMT functions.
+
+## Usage
+
+Follow [this desmos link](https://www.desmos.com/calculator/g7g5xzgjcn) for an example of how TMT can be used in desmos to create and modify tables.
+
+Below is a table of each TMT function, what arguments it takes, and what it does:
+
+function name and arguments | what it does | notes 
+--- | --- | --- 
+`getTableColumns(tableId)`| returns a 2D array of values stored in a table whose `id` matches `tableId` where the `i`th element in the output corresponds to the `i`th column in the table | table values are obtained as the raw LaTeX strings, not the numbers to which they evaluate (so if you enter 2\*3 in a cell in a table it'll give you `"2\cdot 3"`, not `6` 
+`getTableColumnLabels(tableId)`
+`getTableRows(tableId)`
+`setTable(tableId, columnValues, {columnLabels=undefined, plot = true}={})`
+`addTableRow(tableId,rowValues,index=-1)`
+`removeTableRow(tableId,index=-1)`
+`addTableColumn(tableId,columnLabel,columnValues,index=-1)`
+`removeTableColumn(tableId, index=-1)`
+`updateTableRow(tableId,newRowValues,index)`
+`updateTableColumn(tableId,newColumnValues,index)`
+
+## Ancillary functions
+
+Below is a table of functions defined in TMT which are used by other TMT functions but aren't themselves useful for manipulating desmos tables.
+
+function name and arguments | what it does | notes 
+--- | --- | --- 
+`transpose(matrix)` | returns the transpose of a 2D array/matrix | doesn't interact with desmos
+`expressionNumberToId(expressionNumber)` | returns the `id` of an expression given its expression number | throws a `TypeError` if there is no expression with the given expression number
+`getExpressionIdsOfType(targetType)` | returns an array of `id` properties of the expressions whose `type` property matches `targetType` | valid `type` values include `"expression"`, `"table"`, `"image"` and `"folder"` 
+`getExpressionById(expressionId)` | returns the first item in the list of expressions that have the target `id` (`expressionId`) | desmos enforces id uniqueness so the first matching item will also be the only matching item 
+applyTo(array,func,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"}={})| returns an array that results from calling `array.map((x,i) => func(x,i))` except depending on the values of the optional arguments it will handle string inputs differently | if `requireNumericInput` is `true`, it will return the orginal value if it cannot be coerced to a number, and if `ignoreNA` is true it will avoid coercing `""` to `0`
