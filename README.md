@@ -18,7 +18,7 @@ Desmos stores tables as objects with a `columns` property, which is an array of 
 
 Follow [this desmos link](https://www.desmos.com/calculator/g7g5xzgjcn) for an example of how TMT can be used in desmos to create and modify tables.
 
-Below is a summary of each TMT function, what arguments it takes, and what it does:
+Below is a summary of each TMT function, what arguments it takes, and what it does: (click each `function name` to open the description)
 
 
  
