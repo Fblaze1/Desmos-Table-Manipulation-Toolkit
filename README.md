@@ -20,13 +20,13 @@ function name and arguments | what it does | notes
 `getTableColumns(tableId)`| returns a 2D array of values stored in a table whose `id` matches `tableId` where the `i`th element in the output corresponds to the `i`th column in the table | table values are obtained as the raw LaTeX strings, not the numbers to which they evaluate (so if you enter 2\*3 in a cell in a table it'll give you `"2\cdot 3"`, not `6` 
 `getTableColumnLabels(tableId)`
 `getTableRows(tableId)`
-`setTable(tableId, columnValues, {columnLabels=undefined, plot = true}={})`
-`addTableRow(tableId,rowValues,index=-1)`
-`removeTableRow(tableId,index=-1)`
-`addTableColumn(tableId,columnLabel,columnValues,index=-1)`
-`removeTableColumn(tableId, index=-1)`
-`updateTableRow(tableId,newRowValues,index)`
-`updateTableColumn(tableId,newColumnValues,index)`
+`setTable(tableId, columnValues, {columnLabels=undefined, plot = true}={})` | Creates a table | The `columnLabels` and `plot` optional arguments must be passed inside an object like this: `setTable("table1",[["1","4","7"],["2","5","8"],["3","6","9"]],{columnLabels: ["col1","col2","col3"],plot: true})`. As both of these arguments are optional, either or neither of them can be specified, and they can be specified in any order.
+`addTableRow(tableId,rowValues,index=-1)` | Adds a row to a table at a specified row `index` starting from `0` to insert at the start | The default `index` value of `-1` means the row will be added to the end of the table. This can be extended to adding the row to the penultimate position by passing `index` the value `-2` and so on.
+`removeTableRow(tableId,index=-1)`  | Removes a row from a table at a specified row `index` | The default `index` value of `-1` means the row will be added to the end of the table. This can be extended to adding the row to the penultimate position by passing `index` the value `-2` and so on.
+`addTableColumn(tableId,columnLabel,columnValues,index=-1)` | Adds a column to a table at a specified column `index` | The default `index` value of `-1` means the row will be added to the end of the table. This can be extended to adding the row to the penultimate position by passing `index` the value `-2` and so on.
+`removeTableColumn(tableId, index=-1)` | Removes a column from a table at a specified column `index` | The default `index` value of `-1` means the row will be added to the end of the table. This can be extended to adding the row to the penultimate position by passing `index` the value `-2` and so on.
+`updateTableRow(tableId,newRowValues,index)` | Replaces the values in a row at a given `index` in a table with the`newRowValues` | 
+`updateTableColumn(tableId,newColumnValues,index)` 
 
 ## Ancillary functions
 
