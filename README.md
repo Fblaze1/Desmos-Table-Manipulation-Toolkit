@@ -26,11 +26,11 @@ Below is a summary of each TMT function, what arguments it takes, and what it do
 
 ### What it does
 
-returns a 2D array of values stored in a table whose `id` matches `tableId` where the `i`th element in the output corresponds to the `i`th column in the table
+Returns a 2D array of values stored in a table whose `id` matches `tableId` where the `i`th element in the output corresponds to the `i`th column in the table
 
 ### Notes
 
-table values are obtained as the raw LaTeX strings, not the numbers to which they evaluate (so if you enter 2\*3 in a cell in a table it'll give you `"2\cdot 3"`, not `6`
+Table values are obtained as the raw LaTeX strings, not the numbers to which they evaluate (so if you enter 2\*3 in a cell in a table it'll give you `"2\cdot 3"`, not `6`
 
 </details>
 
@@ -157,7 +157,7 @@ Replaces the values in a row at a given `index` in a table with the`newRowValues
 
 ### Notes
 
-see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
+See `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 </details>
 
@@ -171,7 +171,7 @@ see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 ### Notes
 
-see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
+See `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 </details>
 
@@ -181,7 +181,7 @@ see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 ### What it does
 
-returns an array of values stored in a table column whose `latex` property matches `targetColumnLabel`
+Returns an array of values stored in a table column whose `latex` property matches `targetColumnLabel`
 
 ### Notes
 
@@ -199,7 +199,7 @@ returns an array of values stored in a table column whose `latex` property match
 
 ### Notes
 
-see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
+See `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 </details>
 
@@ -209,7 +209,7 @@ see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 ### What it does
 
-removes the column whose `latex` property matches `targetColumnLabel` from the table containing it
+Removes the column whose `latex` property matches `targetColumnLabel` from the table containing it
 
 ### Notes
 
@@ -223,7 +223,7 @@ removes the column whose `latex` property matches `targetColumnLabel` from the t
 
 ### What it does
 
-replaces the `values` in the column whose `latex` property matches `targetColumnLabel` with  `newColumnValues`
+Replaces the `values` in the column whose `latex` property matches `targetColumnLabel` with  `newColumnValues`
 
 ### Notes
 
@@ -241,7 +241,7 @@ replaces the `values` in the column whose `latex` property matches `targetColumn
 
 ### Notes
 
-rows in the output 2D array correspond to rows (rather than columns) of the table
+Rows in the output 2D array correspond to rows (rather than columns) of the table
 
 </details>
 
@@ -255,11 +255,11 @@ Below is a summary of functions defined in TMT which are used by other TMT funct
 
 ### What it does
 
-returns the transpose of a 2D array/matrix
+Returns the transpose of a 2D array/matrix
 
 ### Notes
 
-doesn't interact with desmos
+Doesn't interact with desmos
 
 </details>
 
@@ -269,11 +269,11 @@ doesn't interact with desmos
 
 ### What it does
 
-returns the `id` of an expression given its expression number
+Returns the `id` of an expression given its expression number
 
 ### Notes
 
-throws a `TypeError` if there is no expression with the given expression number
+Throws a `TypeError` if there is no expression with the given expression number
 
 </details>
 
@@ -283,11 +283,11 @@ throws a `TypeError` if there is no expression with the given expression number
 
 ### What it does
 
-returns an array of `id` properties of the expressions whose `type` property matches `targetType`
+Returns an array of `id` properties of the expressions whose `type` property matches `targetType`
 
 ### Notes
 
-valid `type` values include `"expression"`, `"table"`, `"image"` and `"folder"` 
+Valid `type` values include `"expression"`, `"table"`, `"image"` and `"folder"` 
 
 </details>
 
@@ -297,11 +297,11 @@ valid `type` values include `"expression"`, `"table"`, `"image"` and `"folder"`
 
 ### What it does
 
-returns the first item in the list of expressions that have the target `id` (`expressionId`)
+Returns the first item in the list of expressions that have the target `id` (`expressionId`)
 
 ### Notes
 
-desmos enforces id uniqueness so the first matching item will also be the only matching item 
+Desmos enforces id uniqueness so the first matching item will also be the only matching item 
 
 </details>
 
@@ -311,10 +311,10 @@ desmos enforces id uniqueness so the first matching item will also be the only m
 
 ### What it does
 
-returns an array that results from calling `array.map((x,i) => func(x,i))` except depending on the values of the optional arguments it will handle string inputs differently
+Returns an array that results from calling `array.map((x,i) => func(x,i))` except depending on the values of the optional arguments it will handle string inputs differently
 
 ### Notes
 
-if `requireNumericInput` is `true`, it will return the orginal value if it cannot be coerced to a number, and if `ignoreNA` is true it will avoid coercing `""` to `0`
+If `requireNumericInput` is `true`, it will return the orginal value if it cannot be coerced to a number, and if `ignoreNA` is true it will avoid coercing `""` to `0`
 
 </details>
