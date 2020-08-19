@@ -32,10 +32,10 @@ function name and arguments | what it does | notes
 `removeTableColumn(tableId, index=-1)` | Removes a column from a table at a specified column `index` | The default `index` value of `-1` means the row will be added to the end of the table. This can be extended to adding the row to the penultimate position by passing `index` the value `-2` and so on.
 `updateTableRow(tableId,newRowValues,index)` | Replaces the values in a row at a given `index` in a table with the`newRowValues` | 
 `updateTableColumn(tableId,newColumnValues,index)` 
-`applyToTableRow(tableId,func,index,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})`| | see `applyTo` in the [Ancillary functions](#Ancillary functions) section
-`applyToTableColumn(tableId,func,index,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})` | | see `applyTo` in the [Ancillary functions](#Ancillary functions) section
+`applyToTableRow(tableId,func,index,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})`| | see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
+`applyToTableColumn(tableId,func,index,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})` | | see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 `getColumnByLabel(targetColumnLabel)` | returns an array of values stored in a table column whose `latex` property matches `targetColumnLabel` | 
-`applyToColumnByLabel(targetColumnLabel,func,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})` | | see `applyTo` in the [Ancillary functions](#Ancillary functions) section
+`applyToColumnByLabel(targetColumnLabel,func,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})` | | see `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 `removeColumnByLabel(targetColumnLabel)` | removes the column whose `latex` property matches `targetColumnLabel` from the table containing it | 
 `updateColumnByLabel(targetColumnLabel,newColumnValues))` | replaces the `values` in the column whose `latex` property matches `targetColumnLabel` with  `newColumnValues` | 
 `printTable(tableId)` | `console.log`s a 2D array of values (all as strings - see [Concepts](#Concepts)) extracted from a table | rows in the output 2D array correspond to rows (rather than columns) of the table
