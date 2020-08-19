@@ -147,7 +147,15 @@ Replaces the values in a row at a given `index` in a table with the`newRowValues
 </details>
 
 
-`updateTableColumn(tableId,newColumnValues,index)` 
+<details><summary><code>updateTableColumn(tableId,newColumnValues,index)</code></summary>
+ 
+ ### What it does
+ 
+ ### Notes
+ 
+ 
+ 
+ </details>
  
 <details><summary><code>applyToTableRow(tableId,func,index,{requireNumericInput = true,ignoreNA = true,reportNonNumericInput = "default"})</code></summary>
 
