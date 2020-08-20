@@ -26,7 +26,7 @@ Below is a summary of each TMT function, what arguments it takes, and what it do
 
 ### What it does
 
-Returns a 2D array of values stored in a table whose `id` matches `tableId` where the `i`th element in the output corresponds to the `i`th column in the table
+Returns a 2D array of values stored in a table, with each row in the 2D array corresponding to a column in the table
 
 ### Notes
 
@@ -40,7 +40,7 @@ Table values are obtained as the raw LaTeX strings, not the numbers to which the
 
 ### What it does
 
-
+Returns an array of the `latex` properties of each column in the `columns` of a table
 
 ### Notes
 
@@ -54,7 +54,7 @@ Table values are obtained as the raw LaTeX strings, not the numbers to which the
 
 ### What it does
 
-
+Returns a 2D array of values stored in a table, with each row in the 2D array corresponding to a row in the table
 
 ### Notes
 
@@ -68,7 +68,7 @@ Table values are obtained as the raw LaTeX strings, not the numbers to which the
 
 ### What it does
 
-Creates a table
+Creates a table whose `columns` have `values` from the `columnValues` 2D array, and `latex` from `columnLabels`, which must be defined if the table does not already exist. If the table does exist and is being overwritten, leaving the `columnLabels` undefined will cause prevent the original column labels being overwritten. The `plot` argument is a Boolean (`true` or `false`) that determines whether or not to plot the values in the table as points in the graphing calculator, with the first column being the x coordinates and the subsequent values being y coordinates.
 
 ### Notes
 
@@ -151,6 +151,8 @@ Replaces the values in a row at a given `index` in a table with the`newRowValues
  
  ### What it does
  
+ Replaces the values in a column at a given `index` in a table with the`newColumnValues`
+ 
  ### Notes
  
  
@@ -161,7 +163,7 @@ Replaces the values in a row at a given `index` in a table with the`newRowValues
 
 ### What it does
 
-
+Applies the function `func` to every value in a row at a given row `index` of a table
 
 ### Notes
 
@@ -175,7 +177,7 @@ See `applyTo` in the [Ancillary functions](#Ancillary-functions) section
 
 ### What it does
 
-
+Applies the function `func` to every value in a column at a given column `index` of a table
 
 ### Notes
 
@@ -203,7 +205,7 @@ Returns an array of values stored in a table column whose `latex` property match
 
 ### What it does
 
-
+Applies the function `func` to every value in a column in a table whose `latex` property maches `targetColumnLabel`
 
 ### Notes
 
